@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">Шапка
+    </div>
+    <div id="mainWrapper">
+        <div id="aside">
+            <h3>Таблица</h3>
+            <form id="filterForm">
+                <div>
+                    <input type="text" name="query" required placeholder="Введите сюда..." />
+                </div>
+                <div>
+                    <button type="submit">Построить</button>
+                </div>
+            </form>
+            <div>
+                <button id="clearBtn" type="submit">Очистить</button>
+            </div>
+        </div>
+        <div id="root"></div>
+    </div>
+    <div id="footer">Долгова А.ПИ-42</div>
+</body>
+<script src="script.js"></script>
+</html>

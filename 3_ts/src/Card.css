@@ -1,0 +1,15 @@
+.icon-style {
+    font-size: 10em;
+    color: #44aadd;
+}
+
+.card {
+    min-width: 200px;
+    min-height: 80px;
+    background-color: #44aadd;
+    display: flexbox;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    right: 10%;
+    left: 10%;
+}
