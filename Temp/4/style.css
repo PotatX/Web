@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    background-color: gainsboro;
+    flex-direction: column;
+    margin: 0;
+}
+
+div {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid blue;
+}
+
+#mainWrapper {
+    display: flex;
+    flex-grow: 1;
+}
+
+#main {
+    flex-grow: 1;
+}
+
+#signInCard {
+    background-color: white;
+    border-radius: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
