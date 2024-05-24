@@ -1,38 +1,38 @@
 import React from "react";
 import Card from "./Card";
 
-type DateList = {
-  list : FetchData[]
+export type WeatherInfo = {
+description: string, // Информация о погоде.
+location:	string, //nullable: true Местоположение.
+date: string, //($date-time) Дата и время.
+temperature: number, //($double) Температура.
+windDirection:	string, //nullable: true Направление ветра.
+windSpeed: number, //($double) Скорость ветра.
+humidity:	number, //($double) Влажность.
 }
 
-type FetchData = {
-  dt_txt: string,
-  weather: Weather[]
+type DataList = {
+  list : WeatherInfo[],
 }
 
-type Weather = {
-  description: string
-}
+const weatherURL = "https://vm.nathoro.ru/weather?lattitude=54.3&longitude=48.4";
 
-const weatherURL = "https://api.openweathermap.org/data/2.5/forecast?q=Ulyanovsk&lang=ru&units=metric&APPID=a9a3a62789de80865407c0452e9d1c27";
-
-//const weatherURL = "http://www.7timer.info/bin/api.pl?lon=48.4&lat=54.3&product=astro&output=json";
-
-class WeekContainer extends React.Component<{}, DateList> {
+class WeekContainer extends React.Component<{}, DataList> {
 
   componentDidMount = () => {
     fetch(weatherURL)
       .then((res) => res.json())
       .then((data) => {
-        const list = data as DateList;
-        this.setState({ list: list.list });
+        const list = data as WeatherInfo[];
+        const filteredList = list.filter((value) => value.date.includes("T00:"))
+        this.setState({ list: filteredList });
       });
   };
 
   formatCards = () => {
     return this.state?.list
-      ? this.state.list.map((fetchData, index) =>
-      <Card date={fetchData.dt_txt} description={fetchData.weather[0].description} index={index} />)
+      ? this.state.list.map((weatherInfo, index) =>
+      <Card {...weatherInfo} />)
       : null
   };
 
