@@ -1,0 +1,2 @@
+Полностью очистить историю консоли(мейби надо перезайти в неё)
+Remove-Item (Get-PSReadlineOption).HistorySavePath
