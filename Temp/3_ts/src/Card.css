@@ -4,12 +4,13 @@
 }
 
 .card {
-    min-width: 200px;
+    min-width: 150px;
+    max-width: 200px;
     min-height: 80px;
     background-color: #44aadd;
-    display: flexbox;
+    display: flex;
     margin-bottom: 10px;
     border-radius: 30px;
-    right: 10%;
-    left: 10%;
+    justify-content: center;
+    align-items: center;
 }

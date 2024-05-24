@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "./WeekContainer.css"
 
 export type WeatherInfo = {
 description: string, // Информация о погоде.
@@ -41,7 +42,7 @@ class WeekContainer extends React.Component<{}, DataList> {
       <div className="">
         <h1 className="display-4 jumbotron"> Прогноз погоды на 5 дней </h1>{" "}
         <h5 className="display-4 text-muted"> Ulyanovsk </h5>{" "}
-        <div className="row justify-content-center"> {this.formatCards()} </div>{" "}
+        <div className="cardList"> {this.formatCards()} </div>{" "}
       </div>
     );
   }
